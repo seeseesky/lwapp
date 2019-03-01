@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <div id="apk-link"></div>
+    <script>
+      function getAndroidVersion(ua) {
+        ua = (ua || navigator.userAgent).toLowerCase(); 
+        var match = ua.match(/android\s([0-9\.]*)/);
+        return match ? match[1] : undefined;
+      };
+
+      const androidVersion = parseInt(getAndroidVersion(), 10);
+      // parseInt(getAndroidVersion(), 10); //4
+      // parseFloat(getAndroidVersion()); //4.2
+      console.log('androidVersion', androidVersion);
+      if(androidVersion >= 8) {
+        document.getElementById("apk-link").innerHTML = "Up apk url";
+      } else {
+        document.getElementById("apk-link").innerHTML = "down apk url";
+      }
+    </script>
+  </body>
+</html>
